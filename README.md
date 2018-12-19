@@ -21,7 +21,7 @@ The following options can be set on any project using the swagger merger plugin:
 
 | Option | Type | Description | Default |
 | ------ | ---- | ----------- | ------- |
-| mergeSwaggerInputFilter | String | Glob-style string that indicates which source files should be included in the merge | *.yaml |
-| mergeSwaggerBaseFile | String | Glob-style string that indicates which file will be considered the base file (the first matching file will be used) | api.yaml |
+| mergeSwaggerInputFiles | PathFinder | PathFinder that indicates which source files should be included in the merge | baseDirectory.value ** "*.yaml" |
+| mergeSwaggerBaseFile | PathFinder | PathFinder that indicates which file will be considered the base file. The first matching file will be used | baseDirectory.value ** "api.yaml" |
 | mergeSwaggerPrintInputs | Boolean | Would you like the filename of each file being merged to be printed? | false |
-| mergeSwaggerOutputFilename | String | The name to give to the output Swagger file | api.swagger.yaml |
+| mergeSwaggerOutputFile | File | The name to give to the output Swagger file | (resourceManaged in mergeSwagger).value / "api.swagger.yaml" |
