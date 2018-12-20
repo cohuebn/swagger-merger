@@ -3,7 +3,6 @@ ThisBuild / scalaVersion := "2.12.6"
 ThisBuild / organization := "com.bayer.company360"
 
 lazy val versions = new {
-  val akka = "2.5.18"
   val circe = "0.10.1"
 }
 
@@ -15,8 +14,6 @@ lazy val swaggerMerger = (project in file("."))
     libraryDependencies ++= Seq(
       "org.scala-sbt" %% "scripted-plugin" % sbtVersion.value,
       "io.circe" %% "circe-yaml" % "0.9.0",
-      "com.typesafe.akka" %% "akka-stream" % versions.akka,
-      "com.typesafe.akka" %% "akka-stream-testkit" % versions.akka % Test,
       "io.circe" %% "circe-core" % versions.circe,
       "io.circe" %% "circe-generic" % versions.circe,
       "org.scaldi" %% "scaldi" % "0.5.8",
